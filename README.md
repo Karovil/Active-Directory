@@ -15,7 +15,7 @@ Mediante Rubeus podemos realizar el ataque Pass the Ticket utilizando el siguien
 Una vez obtenido el ticket, podemos verificar su validez con klist, que muestra los
 tickets activos de Kerberos en la memoria de la máquina:
 
-![alt text]((https://github.com/Karovil/Active-Directory/blob/Andr%C3%A9s-Arbel%C3%A1ez/ptt2.png)
+![alt text](https://github.com/Karovil/Active-Directory/blob/Andr%C3%A9s-Arbel%C3%A1ez/ptt2.png)
 
 Finalmente, con el ticket de Kerberos, podemos realizar una prueba de acceso a
 recursos compartidos en la red. Usamos el siguiente comando para listar los contenidos
