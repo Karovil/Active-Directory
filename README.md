@@ -1,4 +1,5 @@
-Pass the hash:
+# Pass the hash:
+
 Este ataque permite usar los hashes de usuarios para iniciar sesión en alguno de ellos. En este caso se usará Mimikatz para iniciar sesión como Administrador usando su respectivo hash de contraseña.
 Se ejecutará Mimikatz con el comando “.\mimikatz.exe” y se ingresará el comando “sekurlsa::pth /user:Administrador /domain:cs.org /ntlm:xxxxxxxxxxxxx”
 
