@@ -7,25 +7,44 @@ Descripción del Proyecto
 En este ejercicio, llevamos a cabo una serie de ataques orientados a demostrar vulnerabilidades comunes en la configuración y administración de controladores de dominio. Las técnicas utilizadas incluyeron:
 
 Password Spraying: Intentos masivos de autenticación con combinaciones comunes de contraseñas.
+
 AS-REP Roasting: Extracción de hashes de contraseñas de cuentas con preautenticación deshabilitada en Kerberos.
+
 Kerberoasting: Obtención de hashes de contraseñas vinculadas a cuentas de servicios de Kerberos.
+
 DCSync: Simulación de un controlador de dominio para replicar datos sensibles como hashes de contraseñas.
+
 Pass-the-Hash (PTH): Uso de hashes en lugar de contraseñas para autenticación.
+
 Pass-the-Ticket (PTT): Uso de tickets Kerberos comprometidos para acceder a recursos.
+
 Ataques Externos con Rubeus: Algunos participantes simularon ataques desde fuera del dominio utilizando herramientas como Rubeus, para la obtención y explotación de tickets Kerberos.
+
 Estas técnicas se aplicaron únicamente en un entorno de pruebas, con fines educativos y de fortalecimiento de habilidades en ciberseguridad.
 
+
 Requisitos del Entorno
+
 Sistema Operativo: Kali Linux
+
 Entorno de Pruebas: Controlador de Dominio preconfigurado con cuentas ficticias
+
 Herramientas Principales:
+
 Impacket
+
 Mimikatz
+
 Hashcat
+
 Kerbrute
+
 CrackMapExec
+
 Rubeus
+
 Propósito
+
 Este proyecto busca proporcionar una referencia técnica para estudiantes y profesionales que deseen profundizar en ataques a controladores de dominio en un laboratorio controlado. No debe utilizarse en entornos productivos ni con fines malintencionados.
 
 Nota de Ética
