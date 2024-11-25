@@ -1,51 +1,31 @@
-Ejemplo de Explotación en un Controlador de Dominio
-
-Este repositorio documenta el proceso realizado en un entorno de pruebas enfocado en vulnerar un Controlador de Dominio previamente configurado con datos ficticios y rutas específicas. El objetivo era explorar y aplicar técnicas comunes de ataque en entornos Active Directory, siguiendo principios éticos y en un laboratorio controlado.
-
-Descripción del Proyecto
-
-En este ejercicio, llevamos a cabo una serie de ataques orientados a demostrar vulnerabilidades comunes en la configuración y administración de controladores de dominio. Las técnicas utilizadas incluyeron:
-
-Password Spraying: Intentos masivos de autenticación con combinaciones comunes de contraseñas.
-
-AS-REP Roasting: Extracción de hashes de contraseñas de cuentas con preautenticación deshabilitada en Kerberos.
-
-Kerberoasting: Obtención de hashes de contraseñas vinculadas a cuentas de servicios de Kerberos.
-
-DCSync: Simulación de un controlador de dominio para replicar datos sensibles como hashes de contraseñas.
-
-Pass-the-Hash (PTH): Uso de hashes en lugar de contraseñas para autenticación.
-
 Pass-the-Ticket (PTT): Uso de tickets Kerberos comprometidos para acceder a recursos.
 
-Ataques Externos con Rubeus: Algunos participantes simularon ataques desde fuera del dominio utilizando herramientas como Rubeus, para la obtención y explotación de tickets Kerberos.
+El ataque de Pass the Ticket se basa en Kerberos y permite a un atacante usar un ticket
+Kerberos obtenido, como si fuera un usuario legítimo, para acceder a los recursos y
+servicios en la red. En el caso de DCsync, si un atacante tiene acceso a tickets TGT
+(Ticket Granting Ticket) de un usuario o de una cuenta privilegiada, puede usar estos
+tickets para obtener acceso a otros servicios sin necesidad de credenciales adicionales.
+https://www.netwrix.com/pass_the_ticket.html
 
-Estas técnicas se aplicaron únicamente en un entorno de pruebas, con fines educativos y de fortalecimiento de habilidades en ciberseguridad.
+Mediante Rubeus podemos realizar el ataque Pass the Ticket utilizando el siguiente comando:
+.\Rubeus.exe asktgt /user:Administrador/aes256:adbc3ed526ed66b5633a9eec27b4cccbc4d6a1903aedfd6923437af3da26a87b/domain:cs.org /dc:172.16.1.51 /ptt
+
+i1
+
+Una vez obtenido el ticket, podemos verificar su validez con klist, que muestra los
+tickets activos de Kerberos en la memoria de la máquina:
+
+i2
+
+Finalmente, con el ticket de Kerberos, podemos realizar una prueba de acceso a
+recursos compartidos en la red. Usamos el siguiente comando para listar los contenidos
+de la carpeta administrativa en un servidor remoto
+
+ls \\SERVER.cs.org\C$
+
+i3
 
 
-Requisitos del Entorno
-
-Sistema Operativo: Kali Linux
-
-Entorno de Pruebas: Controlador de Dominio preconfigurado con cuentas ficticias
-
-Herramientas Principales:
-
-Impacket
-
-Mimikatz
-
-Hashcat
-
-Kerbrute
-
-CrackMapExec
-
-Rubeus
-
-Propósito
-
-Este proyecto busca proporcionar una referencia técnica para estudiantes y profesionales que deseen profundizar en ataques a controladores de dominio en un laboratorio controlado. No debe utilizarse en entornos productivos ni con fines malintencionados.
-
-Nota de Ética
-Todas las pruebas fueron realizadas en un entorno controlado con permisos explícitos. Se recomienda aplicar estas técnicas únicamente en laboratorios diseñados para este propósito y respetar siempre las leyes locales y los principios éticos de la ciberseguridad.
+Este comando nos permite acceder al recurso compartido C$ en el servidor
+SERVER.cs.org, utilizando el ticket Kerberos sin necesidad de autenticarnos con la
+contraseña del usuario Administrador
