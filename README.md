@@ -1,51 +1,11 @@
-Ejemplo de Explotación en un Controlador de Dominio
+Pass the hash:
+Este ataque permite usar los hashes de usuarios para iniciar sesión en alguno de ellos. En este caso se usará Mimikatz para iniciar sesión como Administrador usando su respectivo hash de contraseña.
+Se ejecutará Mimikatz con el comando “.\mimikatz.exe” y se ingresará el comando “sekurlsa::pth /user:Administrador /domain:cs.org /ntlm:xxxxxxxxxxxxx”
 
-Este repositorio documenta el proceso realizado en un entorno de pruebas enfocado en vulnerar un Controlador de Dominio previamente configurado con datos ficticios y rutas específicas. El objetivo era explorar y aplicar técnicas comunes de ataque en entornos Active Directory, siguiendo principios éticos y en un laboratorio controlado.
+![alt text](https://github.com/Karovil/Active-Directory/blob/Yon-Roa/Cap1.png)
 
-Descripción del Proyecto
+Una vez se ejecute el comando anterior, se abrirá una consola CMD en la cual se usará la herramienta PsExec.exe para abrir una consola como administrador del servidor. Para ello previamente se debió de descargar la herramienta “PsExec” y luego usarlo de la siguiente forma: “PsExec.exe \\172.16.1.51 cmd.exe”
 
-En este ejercicio, llevamos a cabo una serie de ataques orientados a demostrar vulnerabilidades comunes en la configuración y administración de controladores de dominio. Las técnicas utilizadas incluyeron:
+![alt text](https://github.com/Karovil/Active-Directory/blob/Yon-Roa/Cap2.png)
 
-Password Spraying: Intentos masivos de autenticación con combinaciones comunes de contraseñas.
-
-AS-REP Roasting: Extracción de hashes de contraseñas de cuentas con preautenticación deshabilitada en Kerberos.
-
-Kerberoasting: Obtención de hashes de contraseñas vinculadas a cuentas de servicios de Kerberos.
-
-DCSync: Simulación de un controlador de dominio para replicar datos sensibles como hashes de contraseñas.
-
-Pass-the-Hash (PTH): Uso de hashes en lugar de contraseñas para autenticación.
-
-Pass-the-Ticket (PTT): Uso de tickets Kerberos comprometidos para acceder a recursos.
-
-Ataques Externos con Rubeus: Algunos participantes simularon ataques desde fuera del dominio utilizando herramientas como Rubeus, para la obtención y explotación de tickets Kerberos.
-
-Estas técnicas se aplicaron únicamente en un entorno de pruebas, con fines educativos y de fortalecimiento de habilidades en ciberseguridad.
-
-
-Requisitos del Entorno
-
-Sistema Operativo: Kali Linux
-
-Entorno de Pruebas: Controlador de Dominio preconfigurado con cuentas ficticias
-
-Herramientas Principales:
-
-Impacket
-
-Mimikatz
-
-Hashcat
-
-Kerbrute
-
-CrackMapExec
-
-Rubeus
-
-Propósito
-
-Este proyecto busca proporcionar una referencia técnica para estudiantes y profesionales que deseen profundizar en ataques a controladores de dominio en un laboratorio controlado. No debe utilizarse en entornos productivos ni con fines malintencionados.
-
-Nota de Ética
-Todas las pruebas fueron realizadas en un entorno controlado con permisos explícitos. Se recomienda aplicar estas técnicas únicamente en laboratorios diseñados para este propósito y respetar siempre las leyes locales y los principios éticos de la ciberseguridad.
+![alt text](https://github.com/Karovil/Active-Directory/blob/Yon-Roa/Cap3.png)
