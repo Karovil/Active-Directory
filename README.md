@@ -1,4 +1,5 @@
 Ejemplo de Explotación en un Controlador de Dominio
+
 Este repositorio documenta el proceso realizado en un entorno de pruebas enfocado en vulnerar un Controlador de Dominio previamente configurado con datos ficticios y rutas específicas. El objetivo era explorar y aplicar técnicas comunes de ataque en entornos Active Directory, siguiendo principios éticos y en un laboratorio controlado.
 
 Descripción del Proyecto
