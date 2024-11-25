@@ -1,4 +1,4 @@
-Pass-the-Ticket (PTT): Uso de tickets Kerberos comprometidos para acceder a recursos.
+**Pass-the-Ticket (PTT):** Uso de tickets Kerberos comprometidos para acceder a recursos.
 
 El ataque de Pass the Ticket se basa en Kerberos y permite a un atacante usar un ticket
 Kerberos obtenido, como si fuera un usuario legítimo, para acceder a los recursos y
