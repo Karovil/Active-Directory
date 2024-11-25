@@ -1,7 +1,7 @@
 # Pass the hash con Mimikatz:
 
 Este ataque permite usar los hashes de usuarios para iniciar sesión en alguno de ellos. En este caso se usará Mimikatz para iniciar sesión como Administrador usando su respectivo hash de contraseña.
-Se ejecutará Mimikatz con el comando “.\mimikatz.exe”, en la consola de mimikatz se ingresará el comando “sekurlsa::pth /user:Administrador /domain:cs.org /ntlm:xxxxxxxxxxxxx”. En la flag de "nmtl" se ingresará el hash ntml del usuario administrador.
+Se ejecutará Mimikatz con el comando “.\mimikatz.exe”, en la consola de mimikatz se ingresará el comando “sekurlsa::pth /user:Administrador /domain:cs.org /ntlm:xxxxxxxxxxxxx”. En la flag de "ntlm" se ingresará el hash ntml del usuario administrador.
 
 ![alt text](https://github.com/Karovil/Active-Directory/blob/Yon-Roa/Cap1.png)
 
